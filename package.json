@@ -1,0 +1,23 @@
+{
+  "name": "express-notes-api",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/114droit/express-notes-api#readme",
+  "bugs": {
+    "url": "https://github.com/114droit/express-notes-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/114droit/express-notes-api.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
