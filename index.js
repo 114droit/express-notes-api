@@ -28,6 +28,8 @@ app.post('/notes', (request, response) => {
         author: request.body.author,
         date: request.body.date
     }
+    notes.push(note);
+    response.json(note);
 });
 
 app.get('/notes/:id', (request, response) => {
@@ -41,3 +43,28 @@ app.get('/notes/:id', (request, response) => {
     }
 });
 
+app.put('/notes/:id', (request, response) => {
+    const id = Number(request.params.id);
+    const note = notes.find(note => note.id === id);
+
+    if (note) {
+        note.note = request.body.note;
+        note.author = request.body.author;
+        note.date = request.body.date;
+        response.json(note);
+    } else {
+        response.status(404).end();
+    }
+});
+
+app.delete('/notes/:id', (request, response) => {
+    const id = Number(request.params.id);
+    const note = notes.find(note => note.id === id);
+
+    if (note) {
+        notes.delete(note);
+        response.status(204).end();
+    } else {
+        response.status(404).end();
+    }
+});
