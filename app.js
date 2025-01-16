@@ -62,7 +62,7 @@ app.delete('/notes/:id', (request, response) => {
     const note = notes.find(note => note.id === id);
 
     if (note) {
-        notes.delete(note);
+        delete notes[id];
         response.status(204).end();
     } else {
         response.status(404).end();
